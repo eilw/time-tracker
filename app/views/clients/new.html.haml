@@ -1,0 +1,6 @@
+%h1 Create new client
+
+= form_for @client do |f|
+  = f.text_field :name
+  = f.submit 'Submit'
+= link_to 'Cancel', clients_path

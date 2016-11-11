@@ -1,0 +1,9 @@
+%h1 Clients overview
+
+%ul
+  - @clients.each do |client|
+    %li= client.name
+
+= link_to 'Create new client', new_client_path
+
+
