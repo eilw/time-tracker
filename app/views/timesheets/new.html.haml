@@ -1,0 +1,13 @@
+%h1 Add your time
+
+= form_for @timesheet, url: {action: 'add_time', controller: 'timesheets'} do |f|
+  = f.label :date
+  = f.date_field :date, value: Time.now.strftime('%Y-%m-%d')
+
+  = f.label :project
+  = f.collection_select(:project_name, Project.all, :name, :name, { include_blank: 'Select your projec' }, { required: true })
+
+  = f.label :hours
+  = f.number_field :hours, step: 0.5
+
+  = f.submit 'Submit'
