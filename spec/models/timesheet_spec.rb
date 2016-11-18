@@ -8,6 +8,9 @@ RSpec.describe Timesheet, type: :model do
   describe '#add_time' do
     before do
       timesheet.project_name = project.name
+      timesheet.client_name = project.client.name
+      timesheet.hours = 8
+      timesheet.date = Date.today
     end
 
     it 'will create a new activity' do

@@ -4,8 +4,17 @@
   = f.label :date
   = f.date_field :date, value: Time.now.strftime('%Y-%m-%d')
 
+  = f.label :client
+  = f.collection_select(:client_name, Client.all, :name, :name, { include_blank: 'Select the client', required: true })
+
+  = f.label :add_new_client
+  = f.text_field :new_client_name
+
   = f.label :project
-  = f.collection_select(:project_name, Project.all, :name, :name, { include_blank: 'Select your projec' }, { required: true })
+  = f.grouped_collection_select(:project_name, Client.all, :projects, :name, :name, :name, { include_blank: 'Select your project'})
+
+  = f.label :add_new_project
+  = f.text_field :new_project_name
 
   = f.label :hours
   = f.number_field :hours, step: 0.5

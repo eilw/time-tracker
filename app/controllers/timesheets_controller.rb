@@ -15,7 +15,6 @@ class TimesheetsController < ApplicationController
   private
 
   def timesheet_params
-    params.require(:timesheet).permit(:project_name, :hours, :date).merge(employee: current_employee)
+    params.require(:timesheet).permit(:project_name, :hours, :date, :new_project_name, :client_name, :new_client_name).merge(employee: current_employee)
   end
 end
-
