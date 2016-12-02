@@ -1,0 +1,21 @@
+
+- if @activities
+  %h1 Activities
+  %table
+    %thead
+      %tr 
+        %th Date
+        %th Client
+        %th Project
+        %th Employee
+        %th Hours
+    - @activities.each do |activity|
+      %tr
+        %td= activity.date
+        %td= activity.project.client.name
+        %td= activity.project.name
+        %td= activity.employee.email
+        %td= activity.hours
+
+
+

@@ -10,6 +10,7 @@
     %ul
       %li= link_to 'Clients', clients_path
       %li= link_to 'Add time', new_timesheet_path
+      %li= link_to 'Report', new_report_path
       - if employee_signed_in?
         %li= link_to 'Log out', destroy_employee_session_path, method: :delete
       - else
