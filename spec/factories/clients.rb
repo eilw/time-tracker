@@ -1,5 +1,7 @@
 FactoryGirl.define do
+  sequence(:name) { |n| "Test Client #{n}" }
+
   factory :client do
-    name 'Test Client'
+    name
   end
 end

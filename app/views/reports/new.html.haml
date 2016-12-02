@@ -1,0 +1,23 @@
+= form_for @report, url: employee_report_path, html: { method: :post, remote: true } do |f|
+  = f.label :employee
+  = f.collection_select(:employee, Employee.all, :id, :email, { include_blank: 'Select the employee', required: true })
+  = f.submit 'Submit'
+
+%p
+
+= form_for @report, url: client_report_path, html: { method: :post, remote: true } do |f|
+  = f.label :client
+  = f.collection_select(:client, Client.all, :id, :name, { include_blank: 'Select the client', required: true })
+  = f.submit 'Submit'
+
+%p
+
+= form_for @report, url: project_report_path, html: { method: :post, remote: true } do |f|
+  = f.label :project
+  = f.collection_select(:project, Project.all, :id, :name, { include_blank: 'Select the project', required: true })
+  = f.submit 'Submit'
+
+%p
+
+#report_container
+  No reports selected

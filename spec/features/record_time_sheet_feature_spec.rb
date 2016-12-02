@@ -1,5 +1,4 @@
 require 'rails_helper'
-
 feature 'Add new time entry' do
   background do
     @client = FactoryGirl.create(:client)
