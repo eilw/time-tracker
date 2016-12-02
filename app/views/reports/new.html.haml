@@ -1,4 +1,10 @@
 = form_for @report, url: employee_report_path, html: { method: :post, remote: true } do |f|
+  = f.label :date_from
+  = f.date_field :date_from, value: Time.now.strftime('%Y-%m-%d')
+
+  = f.label :date_to
+  = f.date_field :date_to, value: Time.now.strftime('%Y-%m-%d')
+  
   = f.label :employee
   = f.collection_select(:employee, Employee.all, :id, :email, { include_blank: 'Select the employee', required: true })
   = f.submit 'Submit'

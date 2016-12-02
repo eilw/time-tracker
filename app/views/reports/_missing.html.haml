@@ -1,0 +1,10 @@
+%h1 Missing dates
+%table
+  %thead
+    %tr 
+      %th Date
+      %th Filled in?
+  - @report.date_range.each do |date|
+    %tr
+      %td= date
+      %td= @report.filled_in?(date)

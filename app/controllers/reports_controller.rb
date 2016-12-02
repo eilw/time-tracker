@@ -4,8 +4,7 @@ class ReportsController < ApplicationController
   end
 
   def employee
-    report = Report.new(report_params)
-    @activities = report.employee_report
+    @report = Report.new(report_params)
   end
 
   def client
@@ -21,6 +20,6 @@ class ReportsController < ApplicationController
   private
 
   def report_params
-    params.require(:report).permit(:employee, :client, :project)
+    params.require(:report).permit(:employee, :client, :project, :date_from, :date_to)
   end
 end
